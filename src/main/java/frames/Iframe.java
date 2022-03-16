@@ -12,7 +12,7 @@ public class Iframe {
 
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
-		driver.get("https://the-internet.herokuapp.com/javascript_alerts");
+		driver.get("https://www.selenium.dev/selenium/docs/api/java/index.html?overview-summary.html");
 	}
 
 }
