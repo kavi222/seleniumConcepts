@@ -1,6 +1,7 @@
 package javaInterviewPreparation;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -47,37 +48,67 @@ public class Collection {
 		anotherList.remove(5);
 		System.out.println(anotherList);
 
-		//we can even insert null
+		// we can even insert null
 		anotherList.add(null);
 		System.out.println(anotherList);
-		
-		//set() is used to update the element based on index
+
+		// set() is used to update the element based on index
 		anotherList.set(5, "TOYOTO");
 		System.out.println(anotherList);
-		
-		//isEmpty() method to check the list is empty or not
-		
+
+		// isEmpty() method to check the list is empty or not
+
 		System.out.println(anotherList.isEmpty());
 		System.out.println("Using for each------------------------------------");
-		//Iterate using for each
-		for(String string : anotherList) {
-			
+		// Iterate using for each
+		for (String string : anotherList) {
+
 			System.out.println(string);
 		}
-		
+
 		System.out.println("Using for loop------------------------------------");
-		//using for loop
-		for(int i=0; i< anotherList.size(); i++) {
-			
+		// using for loop
+		for (int i = 0; i < anotherList.size(); i++) {
+
 			System.out.println(anotherList.get(i));
 		}
 		System.out.println("using list iterator------------------------------------");
-		
-		//list iterator and for interface we can't able to create object
+
+		// list iterator and for interface we can't able to create object both forward and backward traversing is possible using list iterator
 		ListIterator<String> li = anotherList.listIterator();
-		while(li.hasNext()) {
+		while (li.hasNext()) {
 			System.out.println(li.next());
 		}
+		System.out.println("using list iterator previous------------------------------------");
+
+		// list iterator and for interface we can't able to create object
+		//ListIterator<String> liPre = anotherList.listIterator();
+		while (li.hasPrevious()) {
+			System.out.println(li.previous());
+		}
+		
+		//Using Iterator only forward traversing is possible
+		System.out.println("Using iterator------------------------------------");
+		
+		Iterator<String> iterator = anotherList.iterator();
+		while(iterator.hasNext()) {
+			System.out.println(iterator.next());
+		}
+		System.out.println("------------------------------------");
+		
+		//Array list not synchronized and thread safe
+		// get ConcurrentModificationException 
+		/*for (String string : anotherList) {
+			System.out.println(string);
+			anotherList.add("TATA");
+		}*/
+
+		//can insert heterogeneous objects(if generic were not used)
+		List l = new ArrayList();
+		l.add(1);
+		l.add("qwer");
+		System.out.println("------------------------------------");
+		System.out.println(l);
 		System.out.println("------------------------------------");
 		// clear to delete all the elements
 		anotherList.clear();
@@ -85,5 +116,13 @@ public class Collection {
 		System.out.println(anotherList.isEmpty());
 
 	}
+	/*
+	 * ArrayList best suited for search operations and worst on insertion and deletion
+	 * Duplicate values allowed
+	 * Insertion order maintained
+	 * Can insert heterogeneous objects(if generic were not used)
+	 * not synchronized and thread safe
+	 * implements random access, serializable and cloneable interface 
+	 */
 
 }
