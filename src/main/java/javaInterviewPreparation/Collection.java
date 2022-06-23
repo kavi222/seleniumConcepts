@@ -56,6 +56,7 @@ public class Collection {
 		System.out.println(anotherList);
 		
 		//isEmpty() method to check the list is empty or not
+		
 		System.out.println(anotherList.isEmpty());
 		System.out.println("Using for each------------------------------------");
 		//Iterate using for each
