@@ -40,6 +40,10 @@ public class ImplicitWait {
 		 * We can use both implicit and explicit together, implicit will affect only find element and find elements methods
 		 */
 
+		//https://stackoverflow.com/questions/17829575/does-webdriverwait-override-implicitlywait-when-both-are-used
+		//http://makeseleniumeasy.com/2017/07/02/part-6-waits-in-selenium-what-happens-when-we-mix-implicit-wait-and-explicit-wait
+		//http://makeseleniumeasy.com/2020/07/12/working-mechanism-of-polling-interval-in-explicit-wait-selenium-webdriver/
+		//https://www.selenium.dev/documentation/webdriver/waits/
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.google.com/");
