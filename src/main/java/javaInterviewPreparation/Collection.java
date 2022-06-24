@@ -107,6 +107,7 @@ public class Collection {
 		List l = new ArrayList();
 		l.add(1);
 		l.add("qwer");
+		
 		System.out.println("------------------------------------");
 		System.out.println(l);
 		System.out.println("------------------------------------");
