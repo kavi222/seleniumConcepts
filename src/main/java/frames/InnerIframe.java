@@ -21,9 +21,6 @@ public class InnerIframe {
 		WebElement innerIframe = driver.findElement(By.xpath("/html/body/section/div/div/iframe"));
 		driver.switchTo().frame(innerIframe);
 		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("kavi");
-		
-		
-		
 	}
 
 }
